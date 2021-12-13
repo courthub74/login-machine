@@ -5,5 +5,8 @@ def home(request):
     return render(request, "home.html", {}) 
 
 def logged(request):
-    return render(request, "logged.html", {}) 
+    if request.method == "POST":
+        pass
+    else:
+        return render(request, "logged.html", {}) 
 

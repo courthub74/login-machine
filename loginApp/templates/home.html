@@ -1,11 +1,9 @@
 {% block content %}
-        <h1>Login Machine</h1>
+    <h1>Login Machine</h1>
 
-    {% csrf_token %}
-        <form method="POST">
-
-            <br>
-
+    <form method="POST">
+         {% csrf_token %}
+            
             <label>Username</label>
 
             <style>
@@ -39,7 +37,8 @@
                     outline: none;
                   }
             </style>
-            <a class="button" href="{% url 'logged' %}">Login</a>
+            {% comment %} <a class="button" type="submit" href="{% url 'logged' %}">Login</a> {% endcomment %}
+            <button type="submit" class="button" formaction={% url 'logged' %}>Login</button>
         </form>
 
 {% endblock %}
