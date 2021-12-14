@@ -22,3 +22,9 @@ def logged(request):
     else:
         return render(request, "logged.html", {}) 
 
+#LOGOUT
+def logout(request):
+    logout(request)
+    messages.success(request, ('You are logged out'))
+    return redirect('home')
+

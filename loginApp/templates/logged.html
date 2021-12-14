@@ -12,12 +12,44 @@
   </head>
 
   <body>
+
+    <style>
+      .button {
+          display: inline-block;
+          padding: 10px 20px;
+          text-align: center;
+          text-decoration: none;
+          color: #ffffff;
+          background-color: #7aa8b7;
+          border-radius: 6px;
+          outline: none;
+        }
+    </style>
     
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <a class="navbar-brand" href="#">This Blue Bar says your are logged in</a>
+      <a class="navbar-brand">This Blue Bar says your are logged in</a>
 
-      <button type="submit" class="button" formaction={% url 'home' %}>Logout</button>
+      {% if user.is_authenticated %}
+
+        <a type="submit" class="button" href="#">Logout</a>
+
+      {% endif %}
+
+      
 
     </nav>
+
+    <div class="container">
+      {% if messages %}
+  
+          {% for message in messages %}
+  
+              <div class="alert alert-dark alert-dismissable" role="alert">
+                  {{ message }}
+              </div>
+              
+          {% endfor %}
+  
+      {% endif %}
+  </div>
 </body> 
