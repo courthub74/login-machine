@@ -38,13 +38,32 @@
             <button type="submit" class="button" formaction={% url 'logged' %}>Login</button>
         </form>
 
-{% endblock %}
+        <!--MESSAGES-->
+        <div class="container">
+            {% if messages %}
+    
+                {% for message in messages %}
+    
+                    <div class="alert alert-primary alert-dismissable" role="alert">
+                        {{ message }}
+                    </div>
+                    
+                {% endfor %}
+    
+            {% endif %}
+        </div>
+
+
+        <br>
 
 <!--THE SALESFORCE LOGIN-->
 
-{% block content %}
 
-    <label>Username</label>
+<h2>Salesforce Login Link</h2>
+
+<form method="POST">
+    {% csrf_token %}
+    <label>Salesforce Username</label>
 
     <div class="form-group">
         <input type="text" class="form-control" name="sfname" placeholder="Enter Text Here:"></input>
@@ -52,29 +71,17 @@
 
     <br>
 
-    <label>Password</label>
+    <label>Salesforce Password</label>
     <div class="form-group">
         <input type="password" class="form-control" name="sfpassword" placeholder="Enter Password Here:"></input>
     </div>
 
+    <br>
+
+    <button type="submit" class="button" formaction="#">Salesforce</button>
+</form>
+
 {% endblock %}
 
-
-    <div class="container">
-        {% if messages %}
-
-            {% for message in messages %}
-
-                <div class="alert alert-primary alert-dismissable" role="alert">
-                    {{ message }}
-                </div>
-                
-            {% endfor %}
-
-        {% endif %}
-    </div>
-
-
-    
   </body>
 </html> 
