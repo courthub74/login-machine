@@ -18,3 +18,20 @@
   </style>
 
   <h1 class="head">Salesforce Demo Page</h1>
+
+  
+
+   <!--MESSAGES-->
+   <div class="container">
+    {% if messages %}
+
+        {% for message in messages %}
+
+            <div class="alert alert-primary alert-dismissable" role="alert">
+                {{ message }}
+            </div>
+            
+        {% endfor %}
+
+    {% endif %}
+</div>

@@ -66,19 +66,19 @@
     <label>Salesforce Username</label>
 
     <div class="form-group">
-        <input type="text" class="form-control" name="sfname" placeholder="Enter Text Here:"></input>
+        <input type="text" class="form-control" name="sfuser" placeholder="Enter Text Here:"></input>
     </div>
 
     <br>
 
     <label>Salesforce Password</label>
     <div class="form-group">
-        <input type="password" class="form-control" name="sfpassword" placeholder="Enter Password Here:"></input>
+        <input type="password" class="form-control" name="sfpass" placeholder="Enter Password Here:"></input>
     </div>
 
     <br>
 
-    <button type="submit" class="button" formaction="#">Salesforce</button>
+    <button type="submit" class="button" formaction={% url 'sfdemo' %}>Salesforce</button>
 </form>
 
 {% endblock %}
