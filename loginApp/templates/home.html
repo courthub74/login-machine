@@ -1,3 +1,6 @@
+
+<!--THE LOGIN BASIC-->
+
 {% block content %}
     <h1>Login Machine</h1>
 
@@ -6,12 +9,6 @@
             
             <label>Username</label>
 
-            <style>
-                <!--Just make the inputs shorter in length-->
-            </style>
-
-
-        
             <div class="form-group">
                 <input type="text" class="form-control" name="username" placeholder="Enter Text Here:"></input>
             </div>
@@ -42,6 +39,26 @@
         </form>
 
 {% endblock %}
+
+<!--THE SALESFORCE LOGIN-->
+
+{% block content %}
+
+    <label>Username</label>
+
+    <div class="form-group">
+        <input type="text" class="form-control" name="sfname" placeholder="Enter Text Here:"></input>
+    </div>
+
+    <br>
+
+    <label>Password</label>
+    <div class="form-group">
+        <input type="password" class="form-control" name="sfpassword" placeholder="Enter Password Here:"></input>
+    </div>
+
+{% endblock %}
+
 
     <div class="container">
         {% if messages %}
