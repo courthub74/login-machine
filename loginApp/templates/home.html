@@ -35,7 +35,27 @@
                   }
             </style>
             {% comment %} <a class="button" type="submit" href="{% url 'logged' %}">Login</a> {% endcomment %}
-            <button type="submit" class="button" formaction={% url 'logged' %}>Login</button>
+                <button type="submit" class="button" formaction={% url 'logged' %}>Login</button>
+
+                <br><br>
+
+                <label>Salesforce Username</label>
+
+                <div class="form-group">
+                    <input type="text" class="form-control" name="username2" placeholder="Enter Text Here:"></input>
+                </div>
+            
+                <br>
+            
+                <label>Salesforce Password</label>
+                <div class="form-group">
+                    <input type="password" class="form-control" name="password2" placeholder="Enter Password Here:"></input>
+                </div>
+            
+                <br>
+            
+                <button type="submit" class="button" formaction={% url 'sfdemo' %}>Salesforce</button>
+        
         </form>
 
         <!--MESSAGES-->
@@ -59,27 +79,27 @@
 <!--THE SALESFORCE LOGIN-->
 
 
-<h2>Salesforce Login Link</h2>
+{% comment %} <h2>Salesforce Login Link</h2>
 
 <form method="POST">
     {% csrf_token %}
     <label>Salesforce Username</label>
 
     <div class="form-group">
-        <input type="text" class="form-control" name="sfuser" placeholder="Enter Text Here:"></input>
+        <input type="text" class="form-control" name="username2" placeholder="Enter Text Here:"></input>
     </div>
 
     <br>
 
     <label>Salesforce Password</label>
     <div class="form-group">
-        <input type="password" class="form-control" name="sfpass" placeholder="Enter Password Here:"></input>
+        <input type="password" class="form-control" name="password2" placeholder="Enter Password Here:"></input>
     </div>
 
     <br>
 
     <button type="submit" class="button" formaction={% url 'sfdemo' %}>Salesforce</button>
-</form>
+</form> {% endcomment %}
 
 {% endblock %}
 
