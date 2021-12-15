@@ -28,6 +28,11 @@ def logout_user(request):
     messages.success(request, ('You are logged out'))
     return redirect('home')
 
+#SALESFORCE DEMO PAGE
+def sfdemo(request):
+    return render(request, "sfdemo.html", {})
+    
+
 #SALESFORCE LOGIN
 def salesforce_login(request):
     if request.method == "POST":
@@ -36,9 +41,8 @@ def salesforce_login(request):
         user = authenticate(request, sfname=sfname, sfpassword=sfpassword)
         if user is not None:
             login(request, user)
-            return redirect('https://login.salesforce.com/')
+            return redirect('sfdemo')
         else:
             return redirect('home')
     else: #If nothing happens just go back to home page
-        return render(request, "home.html")
-
+        return render(request, "home.html", {})
