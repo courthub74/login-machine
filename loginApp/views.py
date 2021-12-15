@@ -33,7 +33,7 @@ def salesforce_login(request):
     if request.method == "POST":
         sfname = request.POST['sfname']
         sfpassword = request.POST['sfpassword']
-        user = authenticate(request, username=username, password=password)
+        user = authenticate(request, sfname=sfname, sfpassword=sfpassword)
         if user is not None:
             login(request, user)
             return redirect('https://login.salesforce.com/')
