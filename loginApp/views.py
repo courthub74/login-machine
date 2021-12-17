@@ -76,3 +76,9 @@ def sf2page(request):
             return redirect('sf2login')
     else:
         return render(request, "sf2page.html", {})
+
+#SALESFORCE LOGOUT
+def logout_sales(request):
+    logout(request)
+    messages.success(request, ('You are logged out'))
+    return redirect('sf2login')
