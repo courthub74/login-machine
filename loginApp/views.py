@@ -30,9 +30,6 @@ def logout_user(request):
 
 
 
-
-
-
 #SALESFORCE DEMO SAME PAGE
 def sfdemo(request):
     return render(request, "sfdemo.html", {})
