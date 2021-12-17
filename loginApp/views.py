@@ -6,7 +6,7 @@ from django.contrib import messages
 def home(request):
     return render(request, "home.html", {}) 
 
-#LOGIN
+#LOGIN BASIC
 def logged(request):
     if request.method == "POST":
         username = request.POST['username']
@@ -22,17 +22,22 @@ def logged(request):
     else:
         return render(request, "logged.html", {}) 
 
-#LOGOUT
+#LOGOUT BASIC
 def logout_user(request):
     logout(request)
     messages.success(request, ('You are logged out'))
     return redirect('home')
 
-#SALESFORCE DEMO PAGE
+
+
+
+
+
+#SALESFORCE DEMO SAME PAGE
 def sfdemo(request):
     return render(request, "sfdemo.html", {})
 
-#SALESFORCE LOGIN
+#SALESFORCE SAME LOGIN
 def sflogin(request):
     if request.method == "POST":
         username2 = request.POST['username2'] #username2 is what is entered in the input area of name='username2'
@@ -49,10 +54,25 @@ def sflogin(request):
         return render(request, "home.html", {}) 
 
 
+
+
+
 #SALESFORCE 2 LOGIN PAGE
 def sf2login(request):
     return render(request, "sf2login.html", {})
 
 #SALESFORCE 2 DEMO PAGE
 def sf2page(request):
-    return render(request, "sf2page.html", {})
+    if request.method == "POST":
+        salesname = request.POST['salesname']
+        salespass = request.POST['salespass']
+        user = authenticate(request, username=salesname, password=salespass)
+        if user is not None:
+            login(request, user)
+            messages.success(request, ('Logged in'))
+            return redirect('sf2page')
+        else:
+            messages.success(request, ('Error Logging in'))
+            return redirect('sf2login')
+    else:
+        return render(request, "sf2page.html", {})

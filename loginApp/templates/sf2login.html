@@ -2,7 +2,7 @@
 
     <h2>Salesforce Demo Login</h2>
 
-    <form>
+    <form method="POST">
         {% csrf_token %}
 
         <label>Username</label>
@@ -19,8 +19,23 @@
 
             <br>
 
-            <button type="submit" class="button" formaction="#">Login to SFDemo</button>
+            <button type="submit" class="button" formaction={% url 'sf2page' %}>Login to SFDemo</button>
     </form>
+
+    <!--MESSAGES-->
+        <div class="container">
+            {% if messages %}
+
+                {% for message in messages %}
+
+                    <div class="alert alert-primary alert-dismissable" role="alert">
+                        {{ message }}
+                    </div>
+                    
+                {% endfor %}
+
+            {% endif %}
+        </div>
 
 {% endblock %}
 
