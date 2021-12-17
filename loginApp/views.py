@@ -29,7 +29,6 @@ def logout_user(request):
     return redirect('home')
 
 
-
 #SALESFORCE DEMO SAME PAGE
 def sfdemo(request):
     return render(request, "sfdemo.html", {})
@@ -49,9 +48,6 @@ def sflogin(request):
             return redirect('home')
     else:
         return render(request, "home.html", {}) 
-
-
-
 
 
 #SALESFORCE 2 LOGIN PAGE
