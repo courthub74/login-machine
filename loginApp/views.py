@@ -41,9 +41,18 @@ def sflogin(request):
         if user is not None:
             login(request, user)
             messages.success(request, ('Login Success'))
-            return redirect('sfdemo')
+            return redirect('https://login.salesforce.com/')
         else:
             messages.success(request, ('Error Logging In'))
             return redirect('home')
     else:
         return render(request, "home.html", {}) 
+
+
+#SALESFORCE 2 LOGIN PAGE
+def sf2login(request):
+    return render(request, "sf2login.html", {})
+
+#SALESFORCE 2 DEMO PAGE
+def sf2page(request):
+    return render(request, "sf2page.html", {})

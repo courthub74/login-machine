@@ -1,0 +1,26 @@
+{% block content %}
+
+    <h2>Salesforce Demo Login</h2>
+
+    <form>
+        {% csrf_token %}
+
+        <label>Username</label>
+            <div class="form-group">
+                <input type="text" class="form-control" name="salesname" placeholder="SF Username Here:"></input>
+            </div>
+
+            <br>
+
+        <label>Password</label>
+            <div class="form-group">
+                <input type="password" class="form-control" name="salespass" placeholder="SF Password Here:"></input>
+            </div>
+
+            <br>
+
+            <button type="submit" class="button" formaction="#">Login to SFDemo</button>
+    </form>
+
+{% endblock %}
+

@@ -33,6 +33,17 @@
                     border-radius: 6px;
                     outline: none;
                   }
+
+                  .button2 {
+                    display: inline-block;
+                    padding: 10px 20px;
+                    text-align: center;
+                    text-decoration: none;
+                    color: white;
+                    background-color: red;
+                    border-radius: 6px;
+                    outline: none;
+                  }
             </style>
             {% comment %} <a class="button" type="submit" href="{% url 'logged' %}">Login</a> {% endcomment %}
                 <button type="submit" class="button" formaction={% url 'logged' %}>Login</button>
@@ -55,6 +66,12 @@
                 <br>
             
                 <button type="submit" class="button" formaction={% url 'sfdemo' %}>Salesforce</button>
+
+                <br>
+                
+                <h1>Link to SF Demo page</h1>
+
+                <button type="submit" class="button2" formaction={% url 'sf2login' %}>Salesforce Demo Page</button>
         
         </form>
 
